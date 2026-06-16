@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" style="scroll-padding-top: 5rem;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO & Meta Tags -->
+  <title>Paper Kite Holding | Paper-based Packaging Solutions</title>
+  <meta name="description" content="Paper Kite Holding is a multi-entity manufacturing group covering the full value chain of paper-based packaging - from corrugated board to digital printing.">
+  <meta name="keywords" content="Paper Kite Holding, packaging, paper packaging, corrugated board, offset printing, digital printing, Ukraine paper import">
+  <meta name="author" content="Paper Kite Holding">
+  <link rel="canonical" href="https://www.pazmy.com/">
+
+  <!-- Open Graph / LinkedIn / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.pazmy.com/">
+  <meta property="og:title" content="Paper Kite Holding">
+  <meta property="og:description" content="A multi-entity manufacturing group covering the full value chain of paper-based packaging.">
+  <meta property="og:image" content="https://www.pazmy.com/og-image.jpg">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Config & Custom Styles -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+          colors: {
+            slate: {
+              850: '#151e2e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    /* Magic MCP Glassmorphism */
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+    }
+
+    /* UI UX Pro Max Bento Cards */
+    .bento-card {
+      background: linear-gradient(145deg, #ffffff, #f8fafc);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .bento-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+      border-color: rgba(203, 213, 225, 1);
+    }
+
+    /* Magic MCP Smooth Fade In - Removed translate-x completely to avoid any horizontal overflow */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fade-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Delays for staggered animations */
+    .delay-100 { transition-delay: 100ms; }
+    .delay-200 { transition-delay: 200ms; }
+    .delay-300 { transition-delay: 300ms; }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+  </style>
+</head>
+<!-- Додано w-full для запобігання виходу за межі -->
+<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-slate-200 selection:text-slate-900 overflow-x-hidden w-full">
+
+  <!-- Navigation -->
+  <nav class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo (Smooth scroll to top) -->
+      <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="text-xl font-bold tracking-tight text-slate-900 hover:opacity-80 transition-opacity">
+        Paper Kite
+      </a>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-8 lg:space-x-10 text-sm font-medium text-slate-500">
+        <a href="#about" class="hover:text-slate-900 transition-colors" data-i18n="nav.about">About</a>
+        <a href="#legacy" class="hover:text-slate-900 transition-colors" data-i18n="nav.legacy">Legacy</a>
+        <a href="#structure" class="hover:text-slate-900 transition-colors" data-i18n="nav.structure">Structure</a>
+        <a href="#management" class="hover:text-slate-900 transition-colors" data-i18n="nav.management">Management</a>
+        <a href="#contacts" class="hover:text-slate-900 transition-colors" data-i18n="nav.contacts">Contacts</a>
+      </div>
+      
+      <!-- Actions -->
+      <div class="flex items-center space-x-4 md:space-x-6">
+        <button id="langToggleBtn" class="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-slate-900 transition-colors w-6">
+          UA
+        </button>
+        <button id="openNewsNavBtn" class="hidden md:block bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-slate-800 transition-all hover:scale-105 active:scale-95 shadow-md shadow-slate-900/20" data-i18n="nav.news">
+          News
+        </button>
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900 transition-colors" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenu" class="fixed inset-0 z-40 bg-white/95 backdrop-blur-lg transform translate-x-full transition-transform duration-300 md:hidden pt-28 px-8 border-l border-slate-100">
+    <div class="flex flex-col space-y-8 text-2xl font-semibold text-slate-900">
+      <a href="#about" class="mobile-link hover:text-blue-600 transition-colors" data-i18n="nav.about">About</a>
+      <a href="#legacy" class="mobile-link hover:text-blue-600 transition-colors" data-i18n="nav.legacy">Legacy</a>
+      <a href="#structure" class="mobile-link hover:text-blue-600 transition-colors" data-i18n="nav.structure">Structure</a>
+      <a href="#management" class="mobile-link hover:text-blue-600 transition-colors" data-i18n="nav.management">Management</a>
+      <a href="#contacts" class="mobile-link hover:text-blue-600 transition-colors" data-i18n="nav.contacts">Contacts</a>
+      <button id="openNewsMobileBtn" class="mobile-link text-left text-blue-600" data-i18n="nav.news">News</button>
+    </div>
+  </div>
+
+  <main class="w-full overflow-hidden"> <!-- Внутрішній overflow-hidden для підстраховки -->
+    <!-- Hero Section -->
+    <header class="pt-40 pb-20 md:pt-48 md:pb-24 px-6 flex flex-col items-center justify-center min-h-[85vh] text-center max-w-5xl mx-auto relative">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-[800px] bg-gradient-to-tr from-slate-100 to-white rounded-full blur-3xl -z-10 opacity-60 pointer-events-none"></div>
+      
+      <h1 class="fade-up text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-slate-900 mb-8 leading-[1.1] w-full" data-i18n="hero.title">
+        One group.<br/>One mind.<br/>Every stage.
+      </h1>
+      <p class="fade-up delay-200 text-lg md:text-2xl text-slate-500 max-w-3xl mx-auto font-light leading-relaxed px-4 md:px-0" data-i18n="hero.subtitle">
+        We design, manufacture, and distribute. We also operate digital print services, run paper and carton import-export, and supply equipment and consumables to industry clients.
+      </p>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-24 px-6 relative w-full">
+      <div class="max-w-7xl mx-auto">
+        <div class="fade-up mb-12 md:mb-16">
+          <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400" data-i18n="about.title">About</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+          <p class="fade-up delay-100 text-2xl md:text-4xl leading-snug font-medium text-slate-800 tracking-tight" data-i18n="about.text1">
+            Paper Kite Holding is a multi-entity manufacturing group covering the full value chain of paper-based packaging.
+          </p>
+          <div class="fade-up delay-200 space-y-6 text-lg text-slate-500 font-light leading-relaxed">
+            <p data-i18n="about.text2">
+              From corrugated board and cartons to labels, printed materials, and book production.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Legacy Section -->
+    <section id="legacy" class="py-20 md:py-24 px-6 bg-white w-full">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
+          <h2 class="fade-up text-xs font-bold uppercase tracking-widest text-slate-400 mb-6" data-i18n="legacy.title">Legacy</h2>
+          <h3 class="fade-up delay-100 text-3xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-8 leading-tight" data-i18n="legacy.subtitle">
+            22 years of operation have produced real assets
+          </h3>
+          <p class="fade-up delay-200 text-xl text-slate-600 mb-6 font-light" data-i18n="legacy.text1">
+            Paper Kite Holding holds an established client base, production-grade printing and processing equipment, a proven product and service range, experienced engineering and operations staff, a vetted supplier network, justified inventory positions, and a market reputation that required decades to build.
+          </p>
+          <p class="fade-up delay-300 text-lg text-slate-500 font-light" data-i18n="legacy.text2">
+            Leadership is committed to results, not maintenance. A market reputation that required decades to build - serving customers across Ukraine and recognized in international markets as a reliable production partner.
+          </p>
+        </div>
+        
+        <!-- The Growth Agenda (Dark Bento Card) -->
+        <div class="fade-up bg-slate-900 text-white rounded-[2rem] p-8 md:p-16 shadow-2xl overflow-hidden relative mx-auto w-full">
+          <div class="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-slate-800 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+          <div class="relative z-10 max-w-3xl">
+            <h3 class="text-2xl md:text-3xl font-semibold mb-6 tracking-tight" data-i18n="legacy.growthTitle">The growth agenda</h3>
+            <p class="text-lg md:text-xl text-slate-300 font-light leading-relaxed" data-i18n="legacy.growthText">
+              New product segments are in development. Equipment investment continues. Personnel capability is being built. Digital printing is a strategic direction. Business digitalization and AI integration are in motion. Financial instruments are being deployed. The foundation is solid. The trajectory is forward.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Values (Bento Grid) -->
+    <section class="py-20 md:py-24 px-6 w-full">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="fade-up text-xs font-bold uppercase tracking-widest text-slate-400 mb-12 md:mb-16 text-center" data-i18n="mission.title">Mission & Values</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <!-- Core Values -->
+          <article class="fade-up bento-card rounded-3xl p-8 md:p-10 w-full">
+            <h3 class="text-xl font-semibold text-slate-900 mb-6 md:mb-8 pb-4 border-b border-slate-200/60" data-i18n="mission.core.title">Core Values</h3>
+            <ul class="space-y-4 text-slate-600">
+              <li class="flex items-start"><span class="text-slate-300 mr-3 shrink-0">◆</span> <span data-i18n="mission.core.items.0">Responsibility</span></li>
+              <li class="flex items-start"><span class="text-slate-300 mr-3 shrink-0">◆</span> <span data-i18n="mission.core.items.1">Teamwork</span></li>
+              <li class="flex items-start"><span class="text-slate-300 mr-3 shrink-0">◆</span> <span data-i18n="mission.core.items.2">Result orientation</span></li>
+              <li class="flex items-start"><span class="text-slate-300 mr-3 shrink-0">◆</span> <span data-i18n="mission.core.items.3">Customer satisfaction</span></li>
+            </ul>
+          </article>
+
+          <!-- Leadership -->
+          <article class="fade-up delay-100 bento-card rounded-3xl p-8 md:p-10 w-full">
+            <h3 class="text-xl font-semibold text-slate-900 mb-6 md:mb-8 pb-4 border-b border-slate-200/60" data-i18n="mission.leadership.title">Leadership</h3>
+            <ul class="space-y-4 text-slate-600">
+              <li class="flex items-start"><span class="text-slate-300 mr-3 shrink-0">◆</span> <span data-i18n="mission.leadership.items.0">Management commitment to principles and values</span></li>
+              <li class="flex items-start"><span class="text-slate-300 mr-3 shrink-0">◆</span> <span data-i18n="mission.leadership.items.1">The leader sets an example for subordinates</span></li>
+            </ul>
+          </article>
+
+          <!-- Development -->
+          <article class="fade-up delay-200 bento-card rounded-3xl p-8 md:p-10 w-full">
+            <h3 class="text-xl font-semibold text-slate-900 mb-6 md:mb-8 pb-4 border-b border-slate-200/60" data-i18n="mission.development.title">Development</h3>
+            <ul class="space-y-4 text-slate-600">
+              <li class="flex items-start"><span class="text-slate-300 mr-3 shrink-0">◆</span> <span data-i18n="mission.development.items.0">People, processes, products, services</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Structure Section -->
+    <section id="structure" class="py-20 md:py-24 px-6 bg-white w-full">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="fade-up text-xs font-bold uppercase tracking-widest text-slate-400 mb-12 md:mb-16 text-center" data-i18n="structure.title">Structure</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Structure Items -->
+          <article class="fade-up bento-card rounded-2xl p-6 md:p-8 group cursor-default w-full">
+            <div class="text-slate-300 font-mono text-sm mb-4">01</div>
+            <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-slate-600 transition-colors" data-i18n="structure.items.0.name">Paperovyi Zmyi-OPT LLC</h3>
+            <p class="text-sm text-slate-500" data-i18n="structure.items.0.desc">Offset Printing, Cardboard and Corrugated Packaging</p>
+          </article>
+          
+          <article class="fade-up delay-100 bento-card rounded-2xl p-6 md:p-8 group cursor-default w-full">
+            <div class="text-slate-300 font-mono text-sm mb-4">02</div>
+            <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-slate-600 transition-colors" data-i18n="structure.items.1.name">Ingul Svit LLC</h3>
+            <p class="text-sm text-slate-500" data-i18n="structure.items.1.desc">Digital Printing</p>
+          </article>
+
+          <article class="fade-up delay-200 bento-card rounded-2xl p-6 md:p-8 group cursor-default w-full">
+            <div class="text-slate-300 font-mono text-sm mb-4">03</div>
+            <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-slate-600 transition-colors" data-i18n="structure.items.2.name">Intertechnodruck LLC</h3>
+            <p class="text-sm text-slate-500" data-i18n="structure.items.2.desc">Offset Printing</p>
+          </article>
+
+          <article class="fade-up bento-card rounded-2xl p-6 md:p-8 group cursor-default w-full">
+             <div class="text-slate-300 font-mono text-sm mb-4">04</div>
+            <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-slate-600 transition-colors" data-i18n="structure.items.3.name">DPI UA LLC</h3>
+            <p class="text-sm text-slate-500" data-i18n="structure.items.3.desc">Digital Printing</p>
+          </article>
+
+          <article class="fade-up delay-100 bento-card rounded-2xl p-6 md:p-8 group cursor-default w-full">
+             <div class="text-slate-300 font-mono text-sm mb-4">05</div>
+            <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-slate-600 transition-colors" data-i18n="structure.items.4.name">Ukrainian Paper Company LLC</h3>
+            <p class="text-sm text-slate-500" data-i18n="structure.items.4.desc">Paper Export and Import</p>
+          </article>
+
+          <article class="fade-up delay-200 bento-card rounded-2xl p-6 md:p-8 group cursor-default w-full">
+             <div class="text-slate-300 font-mono text-sm mb-4">06</div>
+            <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-slate-600 transition-colors" data-i18n="structure.items.5.name">INKOMET LLC</h3>
+            <p class="text-sm text-slate-500" data-i18n="structure.items.5.desc">Supplies and Services</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats & Customers Section -->
+    <section class="py-20 md:py-24 px-6 bg-slate-900 text-white rounded-t-[3rem] mt-8 md:mt-12 w-full">
+      <div class="max-w-7xl mx-auto">
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-20 md:mb-24 text-center border-b border-slate-800 pb-16 md:pb-20">
+          <div class="fade-up">
+            <div class="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter mb-2 md:mb-4 text-white" data-i18n="stats.items.0.value">22</div>
+            <div class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-widest font-semibold" data-i18n="stats.items.0.label">Years</div>
+          </div>
+          <div class="fade-up delay-100">
+            <div class="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter mb-2 md:mb-4 text-white" data-i18n="stats.items.1.value">67k+</div>
+            <div class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-widest font-semibold" data-i18n="stats.items.1.label">Orders</div>
+          </div>
+          <div class="fade-up delay-200">
+            <div class="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter mb-2 md:mb-4 text-white" data-i18n="stats.items.2.value">5027</div>
+            <div class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-widest font-semibold" data-i18n="stats.items.2.label">Customers</div>
+          </div>
+          <div class="fade-up delay-300">
+            <div class="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter mb-2 md:mb-4 text-white" data-i18n="stats.items.3.value">ISO</div>
+            <div class="text-[10px] sm:text-xs text-slate-400 uppercase tracking-widest font-semibold" data-i18n="stats.items.3.label">9001 QMS</div>
+          </div>
+        </div>
+
+        <!-- Customers -->
+        <div class="fade-up w-full overflow-hidden">
+          <h2 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-12 md:mb-16 text-center" data-i18n="customers.title">Our Customers</h2>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 md:gap-16 opacity-60 w-full overflow-hidden">
+          <span class="fade-up text-lg sm:text-xl md:text-3xl font-bold tracking-wider hover:text-white hover:opacity-100 transition-all cursor-default">ROSHEN</span>
+          <span class="fade-up delay-100 text-lg sm:text-xl md:text-3xl font-bold tracking-wider hover:text-white hover:opacity-100 transition-all cursor-default">AJAX</span>
+          <span class="fade-up delay-200 text-lg sm:text-xl md:text-3xl font-bold tracking-wider hover:text-white hover:opacity-100 transition-all cursor-default">ELITE</span>
+          <span class="fade-up delay-300 text-lg sm:text-xl md:text-3xl font-bold tracking-wider hover:text-white hover:opacity-100 transition-all cursor-default">VERES</span>
+          <span class="fade-up text-lg sm:text-xl md:text-3xl font-bold tracking-wider hover:text-white hover:opacity-100 transition-all cursor-default">HEALTHY PHARM</span>
+          <span class="fade-up delay-100 text-lg sm:text-xl md:text-3xl font-bold tracking-wider hover:text-white hover:opacity-100 transition-all cursor-default">RED CROSS</span>
+          <span class="fade-up delay-200 text-lg sm:text-xl md:text-3xl font-bold tracking-wider hover:text-white hover:opacity-100 transition-all cursor-default">SYNGENTA</span>
+          <span class="fade-up delay-300 text-lg sm:text-xl md:text-3xl font-bold tracking-wider hover:text-white hover:opacity-100 transition-all cursor-default">JOHN DEERE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Management Section -->
+    <section id="management" class="py-20 md:py-24 px-6 bg-slate-50 w-full">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="fade-up text-xs font-bold uppercase tracking-widest text-slate-400 mb-16 md:mb-20 text-center" data-i18n="management.title">Management</h2>
+        
+        <!-- CEO -->
+        <div class="fade-up text-center mb-20 md:mb-24 max-w-sm mx-auto">
+          <div class="w-40 h-40 md:w-52 md:h-52 bg-slate-200 rounded-full mx-auto mb-8 shadow-md overflow-hidden relative border-4 border-white">
+            <img src="staff/1.jpg" alt="Oleg Pylypovych, Chief Executive Officer" title="Oleg Pylypovych" loading="lazy" class="w-full h-full object-cover" onmouseenter="this.dataset.title=this.title; this.removeAttribute('title');" onmouseleave="this.title=this.dataset.title;">
+          </div>
+          <h3 class="text-3xl font-semibold text-slate-900 tracking-tight" data-i18n="management.ceo.name">Oleg Pylypovych</h3>
+          <p class="text-slate-500 mt-2 text-lg" data-i18n="management.ceo.role">Chief Executive Officer</p>
+          <p class="text-sm font-semibold tracking-wide text-slate-400 mt-2 uppercase" data-i18n="management.ceo.entity">Paper Kite Holding</p>
+        </div>
+
+        <!-- Team Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+          <article class="fade-up w-full">
+            <div class="w-32 h-32 md:w-40 md:h-40 bg-white border-4 border-white shadow-md rounded-full mx-auto mb-6 overflow-hidden">
+              <img src="staff/2.jpg" alt="Mariia Kuznetsova, Director" title="Mariia Kuznetsova" loading="lazy" class="w-full h-full object-cover" onmouseenter="this.dataset.title=this.title; this.removeAttribute('title');" onmouseleave="this.title=this.dataset.title;">
+            </div>
+            <h4 class="text-lg font-semibold text-slate-900" data-i18n="management.team.0.name">Mariia Kuznetsova</h4>
+            <p class="text-sm text-slate-500 mt-2 leading-tight" data-i18n="management.team.0.role">Director</p>
+            <p class="text-xs font-semibold text-slate-400 mt-2 uppercase tracking-wide" data-i18n="management.team.0.entity">Ingul Svit LLC</p>
+          </article>
+          
+          <article class="fade-up delay-100 w-full">
+            <div class="w-32 h-32 md:w-40 md:h-40 bg-white border-4 border-white shadow-md rounded-full mx-auto mb-6 overflow-hidden">
+              <img src="staff/3.jpg" alt="Yurii Bachurin, Operational Director" title="Yurii Bachurin" loading="lazy" class="w-full h-full object-cover" onmouseenter="this.dataset.title=this.title; this.removeAttribute('title');" onmouseleave="this.title=this.dataset.title;">
+            </div>
+            <h4 class="text-lg font-semibold text-slate-900" data-i18n="management.team.1.name">Yurii Bachurin</h4>
+            <p class="text-sm text-slate-500 mt-2 leading-tight" data-i18n="management.team.1.role">Operational Director & QMS ISO 9001 Lead</p>
+            <p class="text-xs font-semibold text-slate-400 mt-2 uppercase tracking-wide" data-i18n="management.team.1.entity">Paperovyi Zmyi-OPT LLC</p>
+          </article>
+
+          <article class="fade-up delay-200 w-full">
+            <div class="w-32 h-32 md:w-40 md:h-40 bg-white border-4 border-white shadow-md rounded-full mx-auto mb-6 overflow-hidden">
+              <img src="staff/4.jpg" alt="Iegor Schukin, Operational Director" title="Iegor Schukin" loading="lazy" class="w-full h-full object-cover" onmouseenter="this.dataset.title=this.title; this.removeAttribute('title');" onmouseleave="this.title=this.dataset.title;">
+            </div>
+            <h4 class="text-lg font-semibold text-slate-900" data-i18n="management.team.2.name">Iegor Schukin</h4>
+            <p class="text-sm text-slate-500 mt-2 leading-tight" data-i18n="management.team.2.role">Operational Director</p>
+            <p class="text-xs font-semibold text-slate-400 mt-2 uppercase tracking-wide" data-i18n="management.team.2.entity">DPI UA LLC</p>
+          </article>
+
+          <article class="fade-up delay-300 w-full">
+            <div class="w-32 h-32 md:w-40 md:h-40 bg-white border-4 border-white shadow-md rounded-full mx-auto mb-6 overflow-hidden">
+              <img src="staff/5.jpg" alt="Svitlana Dynka, Director" title="Svitlana Dynka" loading="lazy" class="w-full h-full object-cover" onmouseenter="this.dataset.title=this.title; this.removeAttribute('title');" onmouseleave="this.title=this.dataset.title;">
+            </div>
+            <h4 class="text-lg font-semibold text-slate-900" data-i18n="management.team.3.name">Svitlana Dynka</h4>
+            <p class="text-sm text-slate-500 mt-2 leading-tight" data-i18n="management.team.3.role">Director</p>
+            <p class="text-xs font-semibold text-slate-400 mt-2 uppercase tracking-wide" data-i18n="management.team.3.entity">Ukrainian Paper Company LLC</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contacts" class="py-20 md:py-24 px-6 bg-white border-t border-slate-100 w-full">
+      <div class="max-w-7xl mx-auto w-full">
+        <div class="fade-up mb-12 md:mb-16 text-center md:text-left">
+          <h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4" data-i18n="contacts.title">Contacts</h2>
+          <h3 class="text-4xl md:text-5xl font-bold text-slate-900" data-i18n="contacts.info">Get in touch</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 w-full">
+          <!-- Contact Info -->
+          <div class="fade-up delay-100 space-y-8 md:space-y-10 w-full">
+            <div class="flex items-start group">
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-slate-900 group-hover:text-white transition-colors shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              </div>
+              <div class="ml-4 md:ml-6 break-words w-full">
+                <h4 class="text-lg font-semibold text-slate-900 mb-1" data-i18n="contacts.addressTitle">Location</h4>
+                <a href="https://maps.app.goo.gl/3CPU6T1Ef9cSRo4d6" target="_blank" rel="noopener noreferrer" class="text-sm md:text-base text-slate-500 hover:text-blue-600 transition-colors leading-relaxed block">
+                  Ukraine, Kyiv 01033<br/>EUROPASSAGE
+                </a>
+              </div>
+            </div>
+
+            <div class="flex items-start group">
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-slate-900 group-hover:text-white transition-colors shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              </div>
+              <div class="ml-4 md:ml-6 break-words w-full">
+                <h4 class="text-lg font-semibold text-slate-900 mb-1" data-i18n="contacts.emailTitle">E-mail</h4>
+                <a href="mailto:info@pazmy.com" class="text-sm md:text-base text-slate-500 hover:text-blue-600 transition-colors">info@pazmy.com</a>
+              </div>
+            </div>
+
+            <div class="flex items-start group">
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-slate-900 group-hover:text-white transition-colors shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              </div>
+              <div class="ml-4 md:ml-6 w-full">
+                <h4 class="text-lg font-semibold text-slate-900 mb-1" data-i18n="contacts.phoneTitle">Phone</h4>
+                <a href="tel:+380443337253" class="text-sm md:text-base text-slate-500 hover:text-blue-600 transition-colors">+38-044-3337253</a>
+              </div>
+            </div>
+
+            <div class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
+              <a href="https://www.pazmy.com" target="_blank" rel="noopener noreferrer" class="text-sm md:text-base text-slate-400 hover:text-slate-900 transition-colors flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                www.pazmy.com
+              </a>
+              <a href="https://www.linkedin.com/company/paperkiteholding" target="_blank" rel="noopener noreferrer" class="text-sm md:text-base text-slate-400 hover:text-[#0A66C2] transition-colors flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form (Web3Forms Integration) -->
+          <div class="fade-up delay-200 bento-card p-6 md:p-10 rounded-2xl md:rounded-[2rem] w-full">
+            <form id="contactForm" class="space-y-5 md:space-y-6 w-full">
+              
+              <!-- Web3Forms Access Key -->
+              <input type="hidden" name="access_key" value="ce3e008f-95d6-4d49-ab02-a42a0c30d2c5">
+              
+              <!-- Додаткові налаштування Web3Forms -->
+              <input type="hidden" name="subject" value="New message from Paper Kite Website">
+              <input type="hidden" name="from_name" value="Paper Kite Contact Form">
+
+              <!-- Web3Forms Вбудований захист від спаму (Honeypot) -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+              <div class="w-full">
+                <label class="block text-sm font-medium text-slate-700 mb-2" data-i18n="contacts.formName">Your Name</label>
+                <input type="text" id="name" name="name" class="w-full bg-white border border-slate-200 rounded-xl px-4 md:px-5 py-3 md:py-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-400 focus:ring-4 focus:ring-slate-400/10 transition-all shadow-sm box-border" placeholder="John Doe" required>
+              </div>
+              <div class="w-full">
+                <label class="block text-sm font-medium text-slate-700 mb-2" data-i18n="contacts.formEmail">Email Address</label>
+                <input type="email" id="email" name="email" class="w-full bg-white border border-slate-200 rounded-xl px-4 md:px-5 py-3 md:py-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-400 focus:ring-4 focus:ring-slate-400/10 transition-all shadow-sm box-border" placeholder="john@example.com" required>
+              </div>
+              <div class="w-full">
+                <label class="block text-sm font-medium text-slate-700 mb-2" data-i18n="contacts.formMessage">Message</label>
+                <textarea id="message" name="message" rows="4" class="w-full bg-white border border-slate-200 rounded-xl px-4 md:px-5 py-3 md:py-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-400 focus:ring-4 focus:ring-slate-400/10 transition-all shadow-sm resize-none box-border" placeholder="How can we help you?" required></textarea>
+              </div>
+
+              <button type="submit" id="submitBtn" class="w-full bg-slate-900 text-white font-medium py-3 md:py-4 rounded-xl hover:bg-slate-800 transition-colors shadow-lg shadow-slate-900/20 relative flex items-center justify-center">
+                <span id="btnText" data-i18n="contacts.formSubmit">Send Message</span>
+                <div id="btnSpinner" class="hidden absolute w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+              </button>
+              
+              <!-- Messages -->
+              <div id="formSuccess" class="hidden mt-4 p-4 bg-green-50 text-green-700 text-sm rounded-xl border border-green-200">
+                Message sent successfully! We will get back to you soon.
+              </div>
+              <div id="formError" class="hidden mt-4 p-4 bg-red-50 text-red-700 text-sm rounded-xl border border-red-200">
+                Failed to send message. Please try again.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-50 border-t border-slate-200 py-12 px-6 text-center w-full">
+    <p class="text-slate-400 text-sm mb-6">© <span id="year"></span> Paper Kite Holding. All rights reserved.</p>
+    <button 
+      id="openNewsFooterBtn"
+      class="text-sm font-medium text-slate-900 hover:text-slate-500 transition-colors underline decoration-slate-300 underline-offset-4"
+      data-i18n="footer.openNews"
+    >
+      View Latest News
+    </button>
+  </footer>
+
+  <!-- Modal Backdrop & Window - Оновлено для мобільних (Responsive modal) -->
+  <div id="newsModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-0 md:p-6 opacity-0 transition-opacity duration-300 w-full h-full">
+    <!-- Overlay -->
+    <div id="modalOverlay" class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm w-full h-full"></div>
+    
+    <!-- Modal Content - Full screen on mobile, styled card on desktop -->
+    <div class="relative bg-white w-full h-full md:h-auto md:max-w-5xl md:max-h-[90vh] md:rounded-[2rem] shadow-2xl overflow-hidden flex flex-col transform md:scale-95 transition-transform duration-300 ease-out" id="modalContent">
+      <!-- Header -->
+      <div class="p-4 md:p-6 md:px-10 border-b border-slate-100 flex justify-between items-center bg-white/95 backdrop-blur-md z-10 sticky top-0 shadow-sm">
+        <h2 class="text-xl md:text-2xl font-bold text-slate-900 flex items-center">
+          <svg class="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 text-[#0A66C2]" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <span data-i18n="nav.news">News Feed</span>
+        </h2>
+        <button id="closeModalBtn" class="p-2 bg-slate-100 hover:bg-slate-200 rounded-full transition-colors text-slate-600">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+      
+      <!-- Body -->
+      <div class="p-4 md:p-10 overflow-y-auto bg-slate-50/50 flex-grow" id="newsContainer">
+        <!-- Loader -->
+        <div id="newsLoader" class="flex justify-center items-center h-64">
+          <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-slate-900"></div>
+        </div>
+        <!-- Content inserted via JS -->
+        <div id="newsList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 hidden"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // --- 1. ВСТАНОВЛЕННЯ РОКУ У ФУТЕРІ ---
+      const yearEl = document.getElementById('year');
+      if(yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // --- ЛОГІКА КОНТАКТНОЇ ФОРМИ (Web3Forms AJAX) ---
+      const contactForm = document.getElementById('contactForm');
+      if (contactForm) {
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnSpinner = document.getElementById('btnSpinner');
+        const formSuccess = document.getElementById('formSuccess');
+        const formError = document.getElementById('formError');
+
+        contactForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          
+          btnText.classList.add('opacity-0');
+          btnSpinner.classList.remove('hidden');
+          submitBtn.disabled = true;
+          formSuccess.classList.add('hidden');
+          formError.classList.add('hidden');
+
+          const formData = new FormData(contactForm);
+
+          try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json'
+              },
+              body: formData
+            });
+
+            const result = await response.json();
+
+            if (response.status === 200) {
+              formSuccess.classList.remove('hidden');
+              formSuccess.textContent = currentLang === 'uk' ? 'Повідомлення успішно надіслано! Ми зв\'яжемося з вами незабаром.' : 'Message sent successfully! We will get back to you soon.';
+              contactForm.reset();
+            } else {
+              throw new Error(result.message || 'Server error');
+            }
+          } catch (error) {
+            formError.classList.remove('hidden');
+            formError.textContent = currentLang === 'uk' ? 'Помилка при надсиланні. Перевірте ключ Web3Forms або напишіть нам на email.' : 'Failed to send message. Please check the access key or email us directly.';
+            console.error('Form error:', error);
+          } finally {
+            btnText.classList.remove('opacity-0');
+            btnSpinner.classList.add('hidden');
+            submitBtn.disabled = false;
+          }
+        });
+      }
+
+      // --- 2. АНІМАЦІЇ ПРИ СКРОЛІ (Intersection Observer) ---
+      const fadeElements = document.querySelectorAll('.fade-up');
+      if (fadeElements.length > 0 && 'IntersectionObserver' in window) {
+        const scrollObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              scrollObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          root: null,
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px"
+        });
+        
+        fadeElements.forEach(el => scrollObserver.observe(el));
+      } else {
+        fadeElements.forEach(el => el.classList.add('is-visible'));
+      }
+
+      // --- 3. ЛОГІКА МОБІЛЬНОГО МЕНЮ ---
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      let isMobileMenuOpen = false;
+
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          isMobileMenuOpen = !isMobileMenuOpen;
+          if (isMobileMenuOpen) {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden'; // Заборона скролу поза меню
+            mobileMenuBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
+          } else {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+            mobileMenuBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
+          }
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+          link.addEventListener('click', () => {
+            isMobileMenuOpen = false;
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+            mobileMenuBtn.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
+          });
+        });
+      }
+
+      // --- 4. ЛОГІКА МОДАЛЬНОГО ВІКНА ---
+      const modal = document.getElementById('newsModal');
+      const modalContent = document.getElementById('modalContent');
+      const newsLoader = document.getElementById('newsLoader');
+      const newsList = document.getElementById('newsList');
+      let isNewsLoaded = false;
+
+      function openModal() {
+        if(!modal || !modalContent) return;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden'; // Ховаємо скролл сторінки
+        setTimeout(() => {
+          modal.classList.remove('opacity-0');
+          modalContent.classList.remove('md:scale-95'); // Для десктопів
+        }, 10);
+        
+        if (!isNewsLoaded) loadDynamicNews();
+      }
+
+      function closeModal() {
+        if(!modal || !modalContent) return;
+        modal.classList.add('opacity-0');
+        modalContent.classList.add('md:scale-95');
+        document.body.style.overflow = ''; // Повертаємо скролл сторінки
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }, 300);
+      }
+
+      const bindClick = (id, fn) => {
+        const el = document.getElementById(id);
+        if(el) el.addEventListener('click', fn);
+      };
+
+      bindClick('openNewsNavBtn', openModal);
+      bindClick('openNewsMobileBtn', openModal);
+      bindClick('openNewsFooterBtn', openModal);
+      bindClick('modalOverlay', closeModal);
+      bindClick('closeModalBtn', closeModal);
+
+      function loadDynamicNews() {
+        if(!newsLoader || !newsList) return;
+        newsLoader.style.display = 'flex';
+        newsList.style.display = 'none';
+        
+        setTimeout(() => {
+          const mockNews = [
+            { 
+              imgUrl: 'https://images.unsplash.com/photo-1616423640778-28d1b53229bd?auto=format&fit=crop&q=80&w=800', 
+              date: 'October 15, 2025', 
+              titleEn: 'Expanding our capabilities with new digital press equipment at Ingul Svit LLC.', 
+              titleUk: 'Розширюємо наші можливості з новим обладнанням для цифрового друку в ТОВ "Інгул Світ".', 
+              link: 'https://www.linkedin.com/company/paperkiteholding' 
+            },
+            { 
+              imgUrl: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=800', 
+              date: 'September 28, 2025', 
+              titleEn: 'Paper Kite Holding successfully passes the annual ISO 9001 quality management audit.', 
+              titleUk: 'Paper Kite Holding успішно проходить щорічний аудит системи управління якістю ISO 9001.', 
+              link: 'https://www.linkedin.com/company/paperkiteholding' 
+            },
+            { 
+              imgUrl: 'https://images.unsplash.com/photo-1607004468138-07e1c845eb1a?auto=format&fit=crop&q=80&w=800', 
+              date: 'August 10, 2025', 
+              titleEn: 'Proud to announce our expanded partnership with Syngenta for eco-friendly packaging.', 
+              titleUk: 'З гордістю повідомляємо про розширення партнерства з Syngenta щодо екологічного пакування.', 
+              link: 'https://www.linkedin.com/company/paperkiteholding' 
+            }
+          ];
+
+          newsList.innerHTML = ''; 
+          
+          mockNews.forEach(item => {
+            const article = document.createElement('article');
+            article.className = 'bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full';
+            
+            const imgWrapper = document.createElement('div');
+            imgWrapper.className = 'h-48 overflow-hidden bg-slate-100';
+            const img = document.createElement('img');
+            img.src = item.imgUrl;
+            img.alt = 'News Image';
+            img.loading = 'lazy';
+            img.className = 'w-full h-full object-cover hover:scale-105 transition-transform duration-500';
+            imgWrapper.appendChild(img);
+
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'p-5 flex flex-col flex-grow';
+
+            const titleP = document.createElement('p');
+            titleP.className = 'text-slate-900 font-medium leading-relaxed mb-4 flex-grow';
+            titleP.setAttribute('data-news-en', item.titleEn);
+            titleP.setAttribute('data-news-uk', item.titleUk);
+            titleP.textContent = currentLang === 'en' ? item.titleEn : item.titleUk;
+            
+            const bottomRow = document.createElement('div');
+            bottomRow.className = 'flex items-center justify-between mt-auto pt-4 border-t border-slate-50';
+
+            const dateSpan = document.createElement('span');
+            dateSpan.className = 'text-[10px] md:text-xs text-slate-400 font-mono';
+            dateSpan.textContent = item.date;
+
+            const linkBtn = document.createElement('a');
+            linkBtn.href = item.link;
+            linkBtn.target = '_blank';
+            linkBtn.rel = 'noopener noreferrer';
+            linkBtn.className = 'text-sm font-semibold text-[#0A66C2] hover:underline flex items-center';
+            linkBtn.setAttribute('data-i18n', 'news.readMore');
+            linkBtn.textContent = currentLang === 'en' ? dictionary.en.news.readMore : dictionary.uk.news.readMore;
+
+            bottomRow.appendChild(dateSpan);
+            bottomRow.appendChild(linkBtn);
+            
+            contentDiv.appendChild(titleP);
+            contentDiv.appendChild(bottomRow);
+
+            article.appendChild(imgWrapper);
+            article.appendChild(contentDiv);
+            
+            newsList.appendChild(article);
+          });
+
+          newsLoader.style.display = 'none';
+          newsList.style.display = 'grid';
+          isNewsLoaded = true;
+        }, 800);
+      }
+
+      // --- 5. ЛОГІКА БАГАТОМОВНОСТІ (I18N) ---
+      let currentLang = 'en';
+      
+      const dictionary = {
+        en: {
+          nav: { about: 'About', legacy: 'Legacy', structure: 'Structure', management: 'Management', contacts: 'Contacts', news: 'News' },
+          hero: { title: 'One group.<br/>One mind.<br/>Every stage.', subtitle: 'We design, manufacture, and distribute. We also operate digital print services, run paper and carton import-export, and supply equipment and consumables to industry clients.' },
+          about: { title: 'About', text1: 'Paper Kite Holding is a multi-entity manufacturing group covering the full value chain of paper-based packaging.', text2: 'From corrugated board and cartons to labels, printed materials, and book production.' },
+          legacy: { title: 'Legacy', subtitle: '22 years of operation have produced real assets', text1: 'Paper Kite Holding holds an established client base, production-grade printing and processing equipment, a proven product and service range, experienced engineering and operations staff, a vetted supplier network, justified inventory positions, and a market reputation that required decades to build.', text2: 'Leadership is committed to results, not maintenance. A market reputation that required decades to build - serving customers across Ukraine and recognized in international markets as a reliable production partner.', growthTitle: 'The growth agenda', growthText: 'New product segments are in development. Equipment investment continues. Personnel capability is being built. Digital printing is a strategic direction. Business digitalization and AI integration are in motion. Financial instruments are being deployed. The foundation is solid. The trajectory is forward.' },
+          mission: { title: 'Mission & Values', core: { title: 'Core Values', items: ['Responsibility', 'Teamwork', 'Result orientation', 'Customer satisfaction'] }, leadership: { title: 'Leadership', items: ['Management commitment to principles and values', 'The leader sets an example for subordinates'] }, development: { title: 'Development', items: ['People, processes, products, services'] } },
+          structure: { title: 'Structure', items: [{ name: 'Paperovyi Zmyi-OPT LLC', desc: 'Offset Printing, Cardboard and Corrugated Packaging' }, { name: 'Ingul Svit LLC', desc: 'Digital Printing' }, { name: 'Intertechnodruck LLC', desc: 'Offset Printing' }, { name: 'DPI UA LLC', desc: 'Digital Printing' }, { name: 'Ukrainian Paper Company LLC', desc: 'Paper Export and Import' }, { name: 'INKOMET LLC', desc: 'Supplies and Services' }] },
+          stats: { items: [{ value: '22', label: 'Years' }, { value: '67k+', label: 'Orders' }, { value: '5027', label: 'Customers' }, { value: 'ISO', label: '9001 QMS' }] },
+          customers: { title: 'Our Customers' },
+          management: { title: 'Management', ceo: { name: 'Oleg Pylypovych', role: 'Chief Executive Officer', entity: 'Paper Kite Holding' }, team: [{ name: 'Mariia Kuznetsova', role: 'Director', entity: 'Ingul Svit LLC' }, { name: 'Yurii Bachurin', role: 'Operational Director & QMS ISO 9001 Lead', entity: 'Paperovyi Zmyi-OPT LLC' }, { name: 'Iegor Schukin', role: 'Operational Director', entity: 'DPI UA LLC' }, { name: 'Svitlana Dynka', role: 'Director', entity: 'Ukrainian Paper Company LLC' }] },
+          contacts: { title: 'Contacts', info: 'Get in touch', addressTitle: 'Location', emailTitle: 'E-mail', phoneTitle: 'Phone', formName: 'Your Name', formEmail: 'Email Address', formMessage: 'Message', formSubmit: 'Send Message' },
+          news: { readMore: 'Read on LinkedIn' },
+          footer: { openNews: 'View Latest News' }
+        },
+        uk: {
+          nav: { about: 'Про нас', legacy: 'Спадщина', structure: 'Структура', management: 'Керівництво', contacts: 'Контакти', news: 'Новини' },
+          hero: { title: 'Одна група.<br/>Один розум.<br/>Кожен етап.', subtitle: 'Ми проектуємо, виробляємо та розповсюджуємо. Ми також надаємо послуги цифрового друку, здійснюємо імпорт-експорт паперу та картону, постачаємо обладнання та витратні матеріали клієнтам галузі.' },
+          about: { title: 'Про компанію', text1: 'Paper Kite Holding — це виробнича група, що охоплює повний ланцюжок створення вартості паперової упаковки.', text2: 'Від гофрокартону та картонних коробок до етикеток, друкованої продукції та виробництва книг.' },
+          legacy: { title: 'Спадщина', subtitle: '22 роки роботи створили реальні активи', text1: 'Paper Kite Holding має сформовану клієнтську базу, виробниче обладнання, перевірений асортимент, досвідчений персонал, мережу постачальників та репутацію, на створення якої пішли десятиліття.', text2: 'Керівництво націлене на результат. Наша репутація перевірена часом - ми обслуговуємо клієнтів по всій Україні та визнані на міжнародних ринках як надійний партнер.', growthTitle: 'Стратегія зростання', growthText: 'Розробляються нові продукти. Тривають інвестиції в обладнання. Нарощується кадровий потенціал. Цифровий друк — стратегічний напрямок. Триває цифровізація бізнесу та інтеграція ШІ. Фундамент міцний. Траєкторія — вперед.' },
+          mission: { title: 'Місія та Цінності', core: { title: 'Основні цінності', items: ['Відповідальність', 'Командна робота', 'Орієнтація на результат', 'Задоволеність клієнтів'] }, leadership: { title: 'Лідерство', items: ['Відданість керівництва принципам та цінностям', 'Лідер подає приклад підлеглим'] }, development: { title: 'Розвиток', items: ['Люди, процеси, продукти, послуги'] } },
+          structure: { title: 'Структура', items: [{ name: 'ТОВ "Паперовий Змій-ОПТ"', desc: 'Офсетний друк, картонна та гофроупаковка' }, { name: 'ТОВ "Інгул Світ"', desc: 'Цифровий друк' }, { name: 'ТОВ "Інтертехнодрук"', desc: 'Офсетний друк' }, { name: 'ТОВ "ДПІ ЮА"', desc: 'Цифровий друк' }, { name: 'ТОВ "УПК"', desc: 'Експорт та імпорт паперу' }, { name: 'ТОВ "ІНКОМЕТ"', desc: 'Постачання та послуги' }] },
+          stats: { items: [{ value: '22', label: 'Роки' }, { value: '67k+', label: 'Замовлень' }, { value: '5027', label: 'Клієнтів' }, { value: 'ISO', label: '9001 СУЯ' }] },
+          customers: { title: 'Наші Клієнти' },
+          management: { title: 'Керівництво', ceo: { name: 'Олег Пилипович', role: 'Генеральний директор', entity: 'Paper Kite Holding' }, team: [{ name: 'Марія Кузнєцова', role: 'Директор', entity: 'ТОВ "Інгул Світ"' }, { name: 'Юрій Бачурін', role: 'Операційний директор та кер. СУЯ ISO 9001', entity: 'ТОВ "Паперовий Змій-ОПТ"' }, { name: 'Єгор Щукін', role: 'Операційний директор', entity: 'ТОВ "ДПІ ЮА"' }, { name: 'Світлана Динка', role: 'Директор', entity: 'ТОВ "Українська Паперова Компанія"' }] },
+          contacts: { title: 'Контакти', info: 'Зв\'яжіться з нами', addressTitle: 'Адреса', emailTitle: 'Ел. пошта', phoneTitle: 'Телефон', formName: 'Ваше ім\'я', formEmail: 'Електронна пошта', formMessage: 'Повідомлення', formSubmit: 'Надіслати' },
+          news: { readMore: 'Читати в LinkedIn' },
+          footer: { openNews: 'Останні новини' }
+        }
+      };
+
+      function getNestedTranslation(obj, path) {
+        return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+      }
+
+      function toggleLanguage() {
+        currentLang = currentLang === 'en' ? 'uk' : 'en';
+        const langToggleBtn = document.getElementById('langToggleBtn');
+        if(langToggleBtn) langToggleBtn.innerText = currentLang === 'en' ? 'UA' : 'EN';
+        
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          const text = getNestedTranslation(dictionary[currentLang], key);
+          if (text) {
+            if (text.includes('<br/>')) {
+              el.innerHTML = ''; 
+              const parts = text.split('<br/>');
+              parts.forEach((part, index) => {
+                el.appendChild(document.createTextNode(part));
+                if (index < parts.length - 1) {
+                  el.appendChild(document.createElement('br'));
+                }
+              });
+            } else {
+              el.textContent = text;
+            }
+          }
+        });
+
+        if (isNewsLoaded) {
+          document.querySelectorAll('[data-news-en]').forEach(el => {
+            el.textContent = el.getAttribute(`data-news-${currentLang}`); 
+          });
+        }
+        
+        document.documentElement.lang = currentLang;
+      }
+
+      bindClick('langToggleBtn', toggleLanguage);
+
+    }); // Кінець DOMContentLoaded
+  </script>
+</body>
+</html>
