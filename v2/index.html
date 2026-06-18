@@ -685,7 +685,6 @@
         });
 
         document.documentElement.lang = currentLang;
-        try { localStorage.setItem('lang', currentLang); } catch (e) {}
       }
 
       function toggleLanguage() {
@@ -693,6 +692,7 @@
       }
 
       bindClick('langToggleBtn', toggleLanguage);
+      // Default language is always English (HTML content); the toggle switches to UA per session.
 
       // Decorative SVGs carry no information — hide them from assistive tech
       document.querySelectorAll('svg:not([aria-hidden])').forEach(s => s.setAttribute('aria-hidden', 'true'));
@@ -715,12 +715,6 @@
         img.addEventListener('error', hide);
         if (img.complete && img.naturalWidth === 0) hide();
       });
-
-      // Restore saved language, otherwise follow the browser
-      let savedLang = null;
-      try { savedLang = localStorage.getItem('lang'); } catch (e) {}
-      const initialLang = savedLang || ((navigator.language || '').toLowerCase().startsWith('uk') ? 'uk' : 'en');
-      if (initialLang !== 'en') setLanguage(initialLang);
 
     });
   </script>
