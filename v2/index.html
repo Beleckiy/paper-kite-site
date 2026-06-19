@@ -33,6 +33,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
 
+  <!-- Speed up the form's captcha -->
+  <link rel="preconnect" href="https://web3forms.com">
+  <link rel="preconnect" href="https://js.hcaptcha.com" crossorigin>
+
   <!-- Compiled Tailwind + custom styles (build with: npm run build) -->
   <link rel="stylesheet" href="src/tailwind.css">
 
@@ -57,6 +61,7 @@
   </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand selection:text-white overflow-x-hidden w-full">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-brand focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">Skip to content</a>
 
   <!-- Navigation -->
   <nav class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
@@ -99,7 +104,7 @@
     </div>
   </div>
 
-  <main class="w-full overflow-hidden">
+  <main id="main" tabindex="-1" class="w-full overflow-hidden">
     <!-- Hero Section -->
     <header class="pt-40 pb-20 md:pt-48 md:pb-24 px-6 flex flex-col items-center justify-center min-h-[85vh] text-center max-w-5xl mx-auto relative">
       <h1 class="fade-up text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-brand mb-8 leading-[1.1] w-full" data-i18n="hero.title">
@@ -159,7 +164,7 @@
           <!-- Square photo -->
           <div class="fade-up delay-200 w-full">
             <div class="aspect-square w-full md:w-[85%] md:mx-auto bg-slate-200 rounded-2xl overflow-hidden shadow-xl">
-              <img src="src/legacy.webp" alt="Paper Kite Holding presentation at FESPA Corrugated" loading="lazy" class="w-full h-full object-cover">
+              <img src="src/legacy.webp" alt="Paper Kite Holding presentation at FESPA Corrugated" loading="lazy" width="1100" height="1100" class="w-full h-full object-cover">
             </div>
           </div>
         </div>
@@ -328,7 +333,7 @@
         <!-- CEO -->
         <div class="fade-up text-center mb-20 md:mb-24 max-w-sm mx-auto">
           <div class="w-40 h-40 md:w-52 md:h-52 bg-slate-100 rounded-full mx-auto mb-8 shadow-lg overflow-hidden relative border-4 border-brand">
-            <img src="src/staff/1.webp" alt="Oleg Pylypovych, Chief Executive Officer" loading="lazy" class="w-full h-full object-cover">
+            <img src="src/staff/1.webp" alt="Oleg Pylypovych, Chief Executive Officer" loading="lazy" width="700" height="700" class="w-full h-full object-cover">
           </div>
           <h3 class="text-3xl font-bold text-brand tracking-tight" data-i18n="management.ceo.name">Oleg Pylypovych</h3>
           <p class="text-slate-600 mt-2 text-lg font-medium" data-i18n="management.ceo.role">Chief Executive Officer</p>
@@ -339,7 +344,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-center max-w-4xl mx-auto">
           <article class="fade-up w-full">
             <div class="w-32 h-32 md:w-40 md:h-40 bg-slate-100 border-2 border-slate-200 shadow-md rounded-full mx-auto mb-6 overflow-hidden">
-              <img src="src/staff/2.webp" alt="Mariia Kuznetsova, Director" loading="lazy" class="w-full h-full object-cover">
+              <img src="src/staff/2.webp" alt="Mariia Kuznetsova, Director" loading="lazy" width="700" height="700" class="w-full h-full object-cover">
             </div>
             <h4 class="text-lg font-bold text-brand" data-i18n="management.team.0.name">Mariia Kuznetsova</h4>
             <p class="text-sm text-slate-600 mt-2 leading-tight font-medium" data-i18n="management.team.0.role">Director</p>
@@ -348,7 +353,7 @@
           
           <article class="fade-up delay-100 w-full">
             <div class="w-32 h-32 md:w-40 md:h-40 bg-slate-100 border-2 border-slate-200 shadow-md rounded-full mx-auto mb-6 overflow-hidden">
-              <img src="src/staff/3.webp" alt="Yurii Bachurin, Operational Director" loading="lazy" class="w-full h-full object-cover">
+              <img src="src/staff/3.webp" alt="Yurii Bachurin, Operational Director" loading="lazy" width="400" height="400" class="w-full h-full object-cover">
             </div>
             <h4 class="text-lg font-bold text-brand" data-i18n="management.team.1.name">Yurii Bachurin</h4>
             <p class="text-sm text-slate-600 mt-2 leading-tight font-medium" data-i18n="management.team.1.role">Operational Director & QMS ISO 9001 Lead</p>
@@ -357,7 +362,7 @@
 
           <article class="fade-up delay-200 w-full">
             <div class="w-32 h-32 md:w-40 md:h-40 bg-slate-100 border-2 border-slate-200 shadow-md rounded-full mx-auto mb-6 overflow-hidden">
-              <img src="src/staff/5.webp" alt="Svitlana Dynka, Director" loading="lazy" class="w-full h-full object-cover">
+              <img src="src/staff/5.webp" alt="Svitlana Dynka, Director" loading="lazy" width="700" height="700" class="w-full h-full object-cover">
             </div>
             <h4 class="text-lg font-bold text-brand" data-i18n="management.team.2.name">Svitlana Dynka</h4>
             <p class="text-sm text-slate-600 mt-2 leading-tight font-medium" data-i18n="management.team.2.role">Director</p>
@@ -462,6 +467,11 @@
       </div>
     </section>
   </main>
+
+  <!-- Back to top -->
+  <button id="toTop" type="button" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-brand text-white shadow-lg shadow-brand/30 flex items-center justify-center opacity-0 invisible translate-y-2 transition-all duration-300 hover:bg-brand-dark">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
+  </button>
 
   <!-- Footer -->
   <footer class="bg-brand border-t border-brand-dark py-12 px-6 text-center w-full">
@@ -717,6 +727,36 @@
         img.addEventListener('error', hide);
         if (img.complete && img.naturalWidth === 0) hide();
       });
+
+      // Scroll-spy: highlight the nav link of the section currently in view
+      const navLinks = Array.from(document.querySelectorAll('nav a[href^="#"], .mobile-link[href^="#"]'));
+      const spyTargets = navLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+      if (spyTargets.length > 0 && 'IntersectionObserver' in window) {
+        const setActive = (id) => navLinks.forEach(a => {
+          const on = a.getAttribute('href') === '#' + id;
+          a.classList.toggle('text-brand', on);
+          if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+        const spy = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        spyTargets.forEach(s => spy.observe(s));
+      }
+
+      // Back-to-top button: show once the hero is scrolled past
+      const toTop = document.getElementById('toTop');
+      const heroHeader = document.querySelector('header');
+      if (toTop) {
+        toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        if (heroHeader && 'IntersectionObserver' in window) {
+          new IntersectionObserver(([e]) => {
+            const show = !e.isIntersecting;
+            toTop.classList.toggle('opacity-0', !show);
+            toTop.classList.toggle('invisible', !show);
+            toTop.classList.toggle('translate-y-2', !show);
+          }, { threshold: 0 }).observe(heroHeader);
+        }
+      }
 
     });
   </script>
